@@ -42,6 +42,20 @@ public struct State<S, A> {
         return flatMap { _ in next }
     }
 
+    /// Given a top-level function returning a stateful computation, allow it to be passed by name instead of called explicity.
+    ///
+    /// Example::
+    ///
+    ///     // Instead of this
+    ///     put(newstate).then(get())
+    ///
+    ///     // Allows this
+    ///     put(newstate).then(get)
+    ///
+    public func then<B>(next: () -> State<S, B>) -> State<S, B> {
+        return then(next())
+    }
+
 
     // MARK: Higher order functions
 
