@@ -6,6 +6,8 @@ import State
 import XCTest
 
 class StateTests: XCTestCase {
+    // MARK: Running stateful computations
+
     func testRun() {
         XCTAssert(((), [1]) == push(1).run([]))
     }
@@ -16,5 +18,12 @@ class StateTests: XCTestCase {
 
     func testEval() {
         XCTAssert(1 == pop().eval([1]))
+    }
+
+
+    // MARK: Sequencing stateful computations
+
+    func testThen() {
+        XCTAssert([2, 1] == push(1).then(push(2)).exec([]))
     }
 }
