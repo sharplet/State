@@ -58,8 +58,8 @@ class StateTests: XCTestCase {
 
     func testGetAndPutAllowReadingStateAtDifferentPointsInTime() {
         let wrapString = get().flatMap { str in
-                         put("foo").then(get()).flatMap { foo in
-                         put("bar").then(get()).flatMap { bar in
+                         put("foo").then(get).flatMap { foo in
+                         put("bar").then(get).flatMap { bar in
                              put("\(foo), \(str), \(bar)")
                          }}}
 
