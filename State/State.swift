@@ -95,3 +95,17 @@ public func put<S>(s: S) -> State<S, ()> {
 public func yield<S, A>(a: A) -> State<S, A> {
     return State(a)
 }
+
+/// Return a new state by applying a function to the current state, discarding the old state.
+///
+/// Example::
+///
+///     modify { $0 + 1 }.exec(1)   // => 2
+///
+/// This is equivalent to a swift assignment operation::
+///
+///     var i = 1; i += 1           // => 2
+///
+public func modify<S>(f: S -> S) -> State<S, ()> {
+    return State { s in ((), f(s)) }
+}

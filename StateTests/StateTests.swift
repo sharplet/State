@@ -65,4 +65,8 @@ class StateTests: XCTestCase {
 
         XCTAssert("foo, hello, bar" == wrapString.exec("hello"))
     }
+
+    func testModifyMapsAnOldStateToANewState() {
+        XCTAssert(2 == modify { $0 + 1 }.exec(1))
+    }
 }
