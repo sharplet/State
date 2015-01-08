@@ -1,3 +1,7 @@
+//
+//  Copyright (c) 2015 Adam Sharp. All rights reserved.
+//
+
 /// The state monad. Wraps a stateful function S -> (A, S).
 public struct State<S, A> {
     // MARK: Initialisers

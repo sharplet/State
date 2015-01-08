@@ -1,36 +1,68 @@
 //
-//  StateTests.swift
-//  StateTests
-//
-//  Created by Adam Sharp on 7/01/2015.
 //  Copyright (c) 2015 Adam Sharp. All rights reserved.
 //
 
-import Cocoa
+import State
 import XCTest
 
 class StateTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    // MARK: Running stateful computations
+
+    func testRun() {
+        XCTAssert(((), [1]) == push(1).run([]))
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+
+    func testExec() {
+        XCTAssert([] == pop().exec([1]))
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+
+    func testEval() {
+        XCTAssert(1 == pop().eval([1]))
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+
+
+    // MARK: Sequencing stateful computations
+
+    func testThen() {
+        XCTAssert([2, 1] == push(1).then(push(2)).exec([]))
     }
-    
+
+
+    // MARK: Higher order functions
+
+    func testMapTransformsTheComputationResult() {
+        XCTAssert("1" == pop().map(toString).eval([1]))
+    }
+
+    func testFlatMapUsesTheResultAsInputToTheNextComputation() {
+        let add = pop().flatMap { a in
+                  pop().flatMap { b in
+                      push(a + b)
+                  }}
+
+        XCTAssert([3] == add.exec([2,1]))
+    }
+
+
+    // MARK: State operations
+
+    func testGetReadsTheCurrentState() {
+        XCTAssert([1] == get().eval([1]))
+    }
+
+    func testPutReplacesTheCurrentState() {
+        XCTAssert([3,2,1] == put([3,2,1]).exec([]))
+        XCTAssert([3,2,1] == put([3,2,1]).exec([4,5,6]))
+        XCTAssert([3,2,1] == put([3,2,1]).exec(Array(1...100)))
+    }
+
+    func testGetAndPutAllowReadingStateAtDifferentPointsInTime() {
+        let wrapString = get().flatMap { str in
+                         put("foo").then(get()).flatMap { foo in
+                         put("bar").then(get()).flatMap { bar in
+                             put("\(foo), \(str), \(bar)")
+                         }}}
+
+        XCTAssert("foo, hello, bar" == wrapString.exec("hello"))
+    }
 }

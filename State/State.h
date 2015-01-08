@@ -1,8 +1,4 @@
 //
-//  State.h
-//  State
-//
-//  Created by Adam Sharp on 7/01/2015.
 //  Copyright (c) 2015 Adam Sharp. All rights reserved.
 //
 
