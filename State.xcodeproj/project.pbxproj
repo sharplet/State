@@ -11,6 +11,7 @@
 		4AE766FB1A5D11A60006EE35 /* State.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE766EF1A5D11A60006EE35 /* State.framework */; };
 		4AE767021A5D11A60006EE35 /* StateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE767011A5D11A60006EE35 /* StateTests.swift */; };
 		4AE7670C1A5D11C80006EE35 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE7670B1A5D11C80006EE35 /* State.swift */; };
+		4AE7670F1A5E3DAE0006EE35 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE7670E1A5E3DAE0006EE35 /* Stack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		4AE767001A5D11A60006EE35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AE767011A5D11A60006EE35 /* StateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTests.swift; sourceTree = "<group>"; };
 		4AE7670B1A5D11C80006EE35 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		4AE7670E1A5E3DAE0006EE35 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				4AE767011A5D11A60006EE35 /* StateTests.swift */,
+				4AE7670D1A5E3D9D0006EE35 /* Helpers */,
 				4AE766FF1A5D11A60006EE35 /* Supporting Files */,
 			);
 			path = StateTests;
@@ -103,6 +106,14 @@
 				4AE767001A5D11A60006EE35 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4AE7670D1A5E3D9D0006EE35 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4AE7670E1A5E3DAE0006EE35 /* Stack.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AE7670F1A5E3DAE0006EE35 /* Stack.swift in Sources */,
 				4AE767021A5D11A60006EE35 /* StateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
