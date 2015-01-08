@@ -26,4 +26,20 @@ class StateTests: XCTestCase {
     func testThen() {
         XCTAssert([2, 1] == push(1).then(push(2)).exec([]))
     }
+
+
+    // MARK: Higher order functions
+
+    func testMapTransformsTheComputationResult() {
+        XCTAssert("1" == pop().map(toString).eval([1]))
+    }
+
+    func testFlatMapUsesTheResultAsInputToTheNextComputation() {
+        let add = pop().flatMap { a in
+                  pop().flatMap { b in
+                      push(a + b)
+                  }}
+
+        XCTAssert([3] == add.exec([2,1]))
+    }
 }
