@@ -130,9 +130,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4AE766EE1A5D11A60006EE35 /* State */ = {
+		4AE766EE1A5D11A60006EE35 /* State-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4AE767051A5D11A60006EE35 /* Build configuration list for PBXNativeTarget "State" */;
+			buildConfigurationList = 4AE767051A5D11A60006EE35 /* Build configuration list for PBXNativeTarget "State-OSX" */;
 			buildPhases = (
 				4AE766EA1A5D11A60006EE35 /* Sources */,
 				4AE766EB1A5D11A60006EE35 /* Frameworks */,
@@ -143,14 +143,14 @@
 			);
 			dependencies = (
 			);
-			name = State;
+			name = "State-OSX";
 			productName = State;
 			productReference = 4AE766EF1A5D11A60006EE35 /* State.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4AE766F91A5D11A60006EE35 /* StateTests */ = {
+		4AE766F91A5D11A60006EE35 /* Tests-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4AE767081A5D11A60006EE35 /* Build configuration list for PBXNativeTarget "StateTests" */;
+			buildConfigurationList = 4AE767081A5D11A60006EE35 /* Build configuration list for PBXNativeTarget "Tests-OSX" */;
 			buildPhases = (
 				4AE766F61A5D11A60006EE35 /* Sources */,
 				4AE766F71A5D11A60006EE35 /* Frameworks */,
@@ -161,7 +161,7 @@
 			dependencies = (
 				4AE766FD1A5D11A60006EE35 /* PBXTargetDependency */,
 			);
-			name = StateTests;
+			name = "Tests-OSX";
 			productName = StateTests;
 			productReference = 4AE766FA1A5D11A60006EE35 /* StateTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -195,8 +195,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4AE766EE1A5D11A60006EE35 /* State */,
-				4AE766F91A5D11A60006EE35 /* StateTests */,
+				4AE766EE1A5D11A60006EE35 /* State-OSX */,
+				4AE766F91A5D11A60006EE35 /* Tests-OSX */,
 			);
 		};
 /* End PBXProject section */
@@ -241,7 +241,7 @@
 /* Begin PBXTargetDependency section */
 		4AE766FD1A5D11A60006EE35 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4AE766EE1A5D11A60006EE35 /* State */;
+			target = 4AE766EE1A5D11A60006EE35 /* State-OSX */;
 			targetProxy = 4AE766FC1A5D11A60006EE35 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -341,7 +341,7 @@
 				INFOPLIST_FILE = State/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = State;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -360,7 +360,7 @@
 				INFOPLIST_FILE = State/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = State;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -409,21 +409,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4AE767051A5D11A60006EE35 /* Build configuration list for PBXNativeTarget "State" */ = {
+		4AE767051A5D11A60006EE35 /* Build configuration list for PBXNativeTarget "State-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4AE767061A5D11A60006EE35 /* Debug */,
 				4AE767071A5D11A60006EE35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		4AE767081A5D11A60006EE35 /* Build configuration list for PBXNativeTarget "StateTests" */ = {
+		4AE767081A5D11A60006EE35 /* Build configuration list for PBXNativeTarget "Tests-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4AE767091A5D11A60006EE35 /* Debug */,
 				4AE7670A1A5D11A60006EE35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
