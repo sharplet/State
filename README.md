@@ -155,3 +155,16 @@ Turns out:
 <blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/jspahrsummers">@jspahrsummers</a> &#39;&quot;var&quot; is the state monad&#39;</p>&mdash; Joe Groff (@jckarter) <a href="https://twitter.com/jckarter/status/510582940158291969">September 13, 2014</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ¯\\\_(ツ)\_/¯
+
+
+## Installation
+
+Using [Carthage](https://github.com/Carthage/Carthage):
+
+  - Add this line to your `Cartfile`:
+
+        github "sharplet/State"
+
+  - Run `carthage update`
+
+  - Add `State.framework` (located in the `Carthage/Build` directory) to your project (see [here](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for more detailed instructions)
